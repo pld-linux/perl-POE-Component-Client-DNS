@@ -3,8 +3,8 @@
 %bcond_without	tests # do not perform "make test"
 #
 %include	/usr/lib/rpm/macros.perl
-%define	pdir	POE
-%define	pnam	Component-Client-DNS
+%define		pdir	POE
+%define		pnam	Component-Client-DNS
 Summary:	POE component for non-blocking/concurrent DNS queries
 Summary(pl):	Komponent POE do wykonywania nieblokuj±cych/równoczesnych zapytañ DNS
 Name:		perl-POE-Component-Client-DNS
