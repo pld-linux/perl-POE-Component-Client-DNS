@@ -5,13 +5,13 @@
 %include	/usr/lib/rpm/macros.perl
 %define	pdir	POE
 %define	pnam	Component-Client-DNS
-Summary:	POE component for non-blocking/concurrent DNS queries.
-#Summary(pl):	
+Summary:	POE component for non-blocking/concurrent DNS queries
+Summary(pl):	Komponent POE do wykonywania nieblokuj±cych/równoczesnych zapytañ DNS
 Name:		perl-POE-Component-Client-DNS
 Version:	0.95
 Release:	1
 # same as perl
-License:	GPL/Artistic
+License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	ee122434af604b14681ffe60e585f9e3
@@ -29,8 +29,11 @@ POE::Component::Client::DNS is a wrapper for non-blocking Net::DNS.
 It lets other tasks to run while something is waiting for a nameserver
 to respond, and it lets several DNS queries run in parallel.
 
-# %description -l pl
-# TODO
+%description -l pl
+POE::Component::Client::DNS to interfejs do nieblokuj±cej klasy
+Net::DNS. Pozwala na wykonywanie innych zadañ podczas gdy co¶ czeka na
+odpowied¼ serwera nazw, a tak¿e pozwala na równoleg³e wykonywanie
+kilku zapytañ DNS.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
