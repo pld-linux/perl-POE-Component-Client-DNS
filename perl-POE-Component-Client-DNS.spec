@@ -8,19 +8,21 @@
 Summary:	POE component for non-blocking/concurrent DNS queries
 Summary(pl):	Komponent POE do wykonywania nieblokuj±cych/równoczesnych zapytañ DNS
 Name:		perl-POE-Component-Client-DNS
-Version:	0.9802
+Version:	0.99
 Release:	1
+Epoch:		1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	ff19913463de5edac0e81a792d8d9589
+# Source0-md5:	17d8823b50185e4a2536ca8888d45410
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 %if %{with tests}
 BuildRequires:	perl-Net-DNS >= 0.53
-BuildRequires:	perl-POE >= 0.31
+BuildRequires:	perl-POE >= 1:0.3100
 %endif
+Requires:	perl-POE >= 1:0.3100
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
