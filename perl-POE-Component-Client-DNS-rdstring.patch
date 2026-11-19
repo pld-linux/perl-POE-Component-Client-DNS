@@ -1,0 +1,46 @@
+# rdatastr is deprecated in Net::DNS and warns, which fails the "no warnings" tests
+diff -ru POE-Component-Client-DNS-1.054.orig/lib/POE/Component/Client/DNS.pm POE-Component-Client-DNS-1.054/lib/POE/Component/Client/DNS.pm
+--- POE-Component-Client-DNS-1.054.orig/lib/POE/Component/Client/DNS.pm
++++ POE-Component-Client-DNS-1.054/lib/POE/Component/Client/DNS.pm
+@@ -626,7 +626,7 @@
+       print(
+         "$response->{host} = ",
+         $answer->type(), " ",
+-        $answer->rdatastr(), "\n"
++        $answer->rdstring(), "\n"
+       );
+     }
+   }
+diff -ru POE-Component-Client-DNS-1.054.orig/t/01_resolve.t POE-Component-Client-DNS-1.054/t/01_resolve.t
+--- POE-Component-Client-DNS-1.054.orig/t/01_resolve.t
++++ POE-Component-Client-DNS-1.054/t/01_resolve.t
+@@ -104,7 +104,7 @@
+   $heap->{answers}++;
+ 
+   foreach (@answers) {
+-    my $response_data_string = $_->rdatastr;
++    my $response_data_string = $_->rdstring;
+     my $response_data_type   = $_->type;
+ 
+     DEBUG and warn
+diff -ru POE-Component-Client-DNS-1.054.orig/t/06_hosts.t POE-Component-Client-DNS-1.054/t/06_hosts.t
+--- POE-Component-Client-DNS-1.054.orig/t/06_hosts.t
++++ POE-Component-Client-DNS-1.054/t/06_hosts.t
+@@ -140,7 +140,7 @@
+ 
+   return (
+     grep { ref() eq "Net::DNS::RR::A" } $response->{response}->answer()
+-  )[0]->rdatastr();
++  )[0]->rdstring();
+ }
+ 
+ 
+@@ -149,7 +149,7 @@
+   return "" unless defined $response->{response};
+   return (
+     grep { ref() eq "Net::DNS::RR::AAAA" } $response->{response}->answer()
+-  )[0]->rdatastr();
++  )[0]->rdstring();
+ }
+ 
+ 
